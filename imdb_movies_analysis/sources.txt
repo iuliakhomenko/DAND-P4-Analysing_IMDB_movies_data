@@ -1,0 +1,36 @@
+1. Show frequencies in the barplot labels : https://stackoverflow.com/questions/2551921/show-frequencies-along-with-barplot-in-ggplot2
+
+2. Split delimited strings in R: https://stackoverflow.com/questions/15347282/split-delimited-strings-in-a-column-and-insert-as-new-rows
+
+3. Expand color palette in ggplot : http://novyden.blogspot.com/2013/09/how-to-expand-color-palette-with-ggplot.html
+
+4. Weighted scatterplots tutorial : http://t-redactyl.io/blog/2016/02/creating-plots-in-r-using-ggplot2-part-6-weighted-scatterplots.html
+
+5. Select only numeric variables  in data frame : https://stackoverflow.com/questions/5863097/selecting-only-numeric-columns-from-a-data-frame
+
+6. Adjust cor() function for NAs: https://stackoverflow.com/questions/3798998/cor-shows-only-na-or-1-for-correlations-why
+
+7. ggplot colors : http://sape.inf.usi.ch/quick-reference/ggplot2/colour
+
+8. Bubble chart in ggplot tutorial: http://t-redactyl.io/blog/2016/02/creating-plots-in-r-using-ggplot2-part-6-weighted-scatterplots.html
+
+9. Add title and axis labels to the plot: http://environmentalcomputing.net/plotting-with-ggplot-adding-titles-and-axis-names/
+
+10. Move plot title to the center : https://stackoverflow.com/questions/40675778/center-plot-title-in-ggplot2
+
+11. Remove duplicate rows: https://stackoverflow.com/questions/13967063/remove-duplicated-rows
+
+12. Remove unused factors in R dataframe: https://stackoverflow.com/questions/17217951/how-can-i-drop-unused-levels-from-a-data-frame
+
+13. Merging dataframes : https://stackoverflow.com/questions/1299871/how-to-join-merge-data-frames-inner-outer-left-right
+
+14. Web scraping from multiple pages in R https://stackoverflow.com/questions/36683510/r-web-scraping-across-multiple-pages
+
+15. Scrape with R XML package : https://stackoverflow.com/questions/1395528/scraping-html-tables-into-r-data-frames-using-the-xml-package
+
+16. Add mean line to ggplot : https://stackoverflow.com/questions/38501391/r-add-an-average-line-to-an-existing-plot
+
+17. Rotate x axis label : https://stackoverflow.com/questions/1330989/rotating-and-spacing-axis-labels-in-ggplot2
+
+18. Change the size of the plot: https://stackoverflow.com/questions/15473877/can-you-change-the-proportions-of-the-ggplot2-graph-from-square-to-rectangle
+ 

@@ -1,0 +1,44 @@
+
+First we will scrape exchange rates for each currency into a dataframe and 
+insert the necessary info into our working dataframe. So we would need to make 
+20 quieries total. Certainly, we could have made 86 separate queries, for 
+selected currency in selected year, but such scraping process will take much 
+longer and will put additional pressure on the server of the web-page, which we 
+would like to avoid. 
+For data scraping we use XML library. So let's do it :
+
+```{r}
+library(XML)
+library(purrr)
+
+exrates_df_cols <- c('currency', 'year', 'rate')
+exrates_df <- data.frame(matrix(ncol = 3, nrow =0))
+colnames(exrates_df) <- exrates_df_cols
+
+currencies <- unique(movies$budget_currency)
+currencies <- currencies[!currencies %in% 'USD']
+
+url_base <- 'http://fxtop.com/en/historical-exchange-rates.php?YA=1&C1=%s&C2=USD&A=1&YYYY1=1953&MM1=01&DD1=01&YYYY2=2017&MM2=12&DD2=14&LANG=en'
+for (i in 1:length(currencies)) {
+  
+  #Adding print statement to monitor the process of making requests
+  print (sprintf('Processing request# %d...', i))
+  webpage <- sprintf(url_base,currencies[i])
+  wp_doc <- htmlParse(webpage)
+  wp_tabs <- readHTMLTable(wp_doc)
+  scraped_df <- wp_tabs[[30]][,1:2]
+  
+  #we need to keep track of the currency in our rates dataframe, so we create additional column 
+  #to indicate which currency the given row refers to
+  currency_list <- rep(currencies[i], length(nrow(scraped_df)))
+  
+  #modifying and reodering scraped df columns to rbind it to the previous result
+  target_df <- cbind(scraped_df,currency_list)
+  target_df <- target_df[c(3,1,2)]
+  colnames(target_df) <- exrates_df_cols
+  exrates_df <- rbind(exrates_df,target_df)
+}
+
+#write scraped exchange rates into csv file
+write.csv(exrates_df, file = "ExRates2.csv")
+```
